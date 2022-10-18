@@ -53,5 +53,13 @@ table {
   margin: 0 auto;
   padding-right: 26px;
   padding-left: 26px;
-  background-color: #fff;
+}
+
+.hide{
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }

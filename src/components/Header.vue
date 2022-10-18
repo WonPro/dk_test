@@ -1,7 +1,9 @@
 <template>
   <header class="header">
     <div class="innerWrap">
-      <a href="" class="sprite-txt sprite-txt_logo"></a>
+      <a href="" class="sprite-txt sprite-txt_logo">
+        <span class="hide">디케이테크인</span>
+      </a>
     </div>
   </header>
 </template>
@@ -22,4 +24,9 @@
     border-bottom: 1px solid #ccc;
   }
 
+  @media screen and (max-width: 1280px) {
+    .header{
+      width: 100%;
+    }
+  }
 </style>

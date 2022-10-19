@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="innerWrap">
-      <a href="" class="sprite-txt sprite-txt_logo">
+      <a href="" class="spriteImg spriteImg-txt_logo">
         <span class="hide">디케이테크인</span>
       </a>
     </div>

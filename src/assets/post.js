@@ -24,6 +24,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 4.5,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 1,
@@ -66,6 +67,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 3,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 2,
@@ -92,6 +94,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 2.5,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 3,
@@ -118,6 +121,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 5,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 4,
@@ -148,6 +152,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 2,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 5,
@@ -174,6 +179,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 1.5,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 6,
@@ -200,6 +206,7 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 1,
+    slideThumbnail: "./img_thumbnail07.png",
   },
   {
     id : 7,
@@ -234,5 +241,6 @@ export default[
     ],
     storyImg: "./img_thumbnail06.png",
     starPoint: 0.5,
+    slideThumbnail: "./img_thumbnail07.png",
   },
 ]

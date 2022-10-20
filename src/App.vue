@@ -35,7 +35,7 @@ export default {
       contWrapFolding: false, // 콘텐츠 영역 상태
       tabMenu : ['spriteImg-txt_tabTitle_blog', 'spriteImg-txt_tabTitle_story'], // 콘텐츠 탭 메뉴
       postList: postList, // 인기블로그 데이터 js
-      rankSortingList : [],
+      rankSortingList : [...postList], // 별점순 정렬한 인기블로그 데이터
     }
   },
   methods: {
@@ -44,7 +44,7 @@ export default {
     },
   },
   mounted () {
-    this.rankSortingList = this.postList.sort(function(a, b){
+    this.rankSortingList = this.rankSortingList.sort(function(a, b){
       return b.starPoint - a.starPoint
     });
   },

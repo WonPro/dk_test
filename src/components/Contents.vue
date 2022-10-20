@@ -85,7 +85,7 @@
               v-for="(item, i) in postList.slice(1, 5)"
               :key="i"
             >
-              <img class="img" :style="{backgroundImage: 'url(' + item.storyImg + ')'}" alt="">
+              <div class="img" :style="{backgroundImage: 'url(' + item.storyImg + ')'}"></div>
               <figcaption> 
                 <p class="title">
                   {{ item.title }} 
@@ -125,9 +125,19 @@
           </h2>
           <div class="contentsWrap">
             <h3>#국내여행 블로그</h3>
-            <div class="slide"></div>
-
+            <div>
+              <div id="mainslider">
+                <splide :options="options">
+                  <splide-slide v-for="(item, i) in postList" :key="i">
+                    <div style="height: 45px;" :style="{backgroundImage: 'url('+ item.slideThumbnail +')'}">{{i}}</div>
+                  </splide-slide>
+              </splide>
+            </div>
+            </div>
             <h3>#100만방문자</h3>
+            <div>
+              
+            </div>
           </div>
         </article>
       </section>
@@ -136,6 +146,8 @@
 </template>
 
 <script>
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
   export default {
     name: 'ContentsWrap',
@@ -145,6 +157,16 @@
         hotViews: 1000, // Hot 아이콘 획득 조회수 기준
         nowDate: '', // 오늘 년월일
         recentDate: '', // 7일 전 년월일
+        options: {
+          type : 'loop',
+          rewind: true,
+          perPage: 5,
+          perMove: 1,
+          gap: 10,
+          pauseOnHover: false,
+          arrows: true,
+          hasTrack: false,
+        },
       }
     },
     mounted () {
@@ -155,7 +177,6 @@
       }, 1000)
     },
     methods: {
-
       // 클릭한 탭을 currentTab으로 저장
       chosenTab(i) {
         this.currentTab = i;
@@ -172,6 +193,10 @@
         this.nowDate = yy + '-' + mm + '-' + dd;
         this.recentDate = yy + '-' + mm + '-' + d7;
       }
+    },
+    components: {
+      Splide,
+      SplideSlide,
     },
     props: {
       tabMenu: Array,
@@ -380,6 +405,32 @@
     color: #fff;
   }
 
+  @media screen and (max-width: 640px) {
+    #hotBlog .card .thumbnail{
+      display: none;
+    }
+
+    #hotBlog .card .cardCont{
+      width: 100%;
+    }
+
+    #hotBlog .card .cardCont .cardTitle{
+      padding-right: 0;
+      line-height: 1.4;
+      white-space: unset;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    #hotBlog .card .cardCont .cardTitle.new:after,
+    #hotBlog .card .cardCont .cardTitle.hot:after{
+      position: static;
+      display: inline-block;
+      margin-left: 5px;
+    }
+  }
+
   #hotStory{
     padding: 17px;
   }
@@ -503,6 +554,24 @@
     top: 0;
     left: 0;
     background: url(../assets/img_starRating2.png) left center / cover no-repeat;
+  }
+
+  #rankNewSection .new .slideContainer{
+    display: flex;
+    overflow: hidden;
+  }
+  #rankNewSection .new .slideContainer .slide{
+    width: 700%;
+    height: 47px;
+    overflow: hidden;
+  }
+
+  #rankNewSection .new .slideContainer .card{
+    width: 65px;
+    height: 47px;
+    margin: 0 2px;
+    display: block;
+    float: left;
   }
 
 </style>

@@ -7,7 +7,7 @@ export default[
     link: 'https://dktechin.com/service/introduce/company',
     source: "blog201Q",
     writer: "키미",
-    image: "spriteImg-img_thumbnail02",
+    image: "img_thumbnail02.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -21,7 +21,9 @@ export default[
         tagNm: "#9년차블로그",
         tagColor: '#b3b6bb'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 4.5,
   },
   {
     id : 1,
@@ -61,7 +63,9 @@ export default[
         tagNm: "#10월이슈포스트",
         tagColor: '#a37a7b'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 3,
   },
   {
     id : 2,
@@ -85,7 +89,9 @@ export default[
         tagNm: "#9년차블로그",
         tagColor: '#b3b6bb'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 2.5,
   },
   {
     id : 3,
@@ -109,7 +115,9 @@ export default[
         tagNm: "#9년차블로그",
         tagColor: '#b3b6bb'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 5,
   },
   {
     id : 4,
@@ -137,7 +145,9 @@ export default[
         tagNm: "#10월이슈포스트",
         tagColor: '#a37a7b'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 2,
   },
   {
     id : 5,
@@ -161,7 +171,9 @@ export default[
         tagNm: "#9년차블로그",
         tagColor: '#b3b6bb'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 1.5,
   },
   {
     id : 6,
@@ -185,7 +197,9 @@ export default[
         tagNm: "#9년차블로그",
         tagColor: '#b3b6bb'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 1,
   },
   {
     id : 7,
@@ -217,6 +231,8 @@ export default[
         tagNm: "#친절한답글러",
         tagColor: '#ccc76c'
       },
-    ]
+    ],
+    storyImg: "./img_thumbnail06.png",
+    starPoint: 0.5,
   },
 ]

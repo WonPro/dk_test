@@ -9,6 +9,7 @@
 
     <ContentsWrap 
       :postList="postList"
+      :rankSortingList="rankSortingList"
       :tabMenu="tabMenu"
       :class="{'extexsion': contWrapFolding}"
     />
@@ -34,12 +35,18 @@ export default {
       contWrapFolding: false, // 콘텐츠 영역 상태
       tabMenu : ['spriteImg-txt_tabTitle_blog', 'spriteImg-txt_tabTitle_story'], // 콘텐츠 탭 메뉴
       postList: postList, // 인기블로그 데이터 js
+      rankSortingList : [],
     }
   },
   methods: {
     lnbToggle() {
       this.lnbActive = !this.lnbActive
     },
+  },
+  mounted () {
+    this.rankSortingList = this.postList.sort(function(a, b){
+      return b.starPoint - a.starPoint
+    });
   },
   components: {
     HeaderBar : HeaderBar, // 헤더

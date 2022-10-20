@@ -64,7 +64,67 @@
     </ul>
 
     <div id="hotStory" class="viewCont" :class="{on: currentTab == 1}">
-      
+      <section id="bestSection">
+        <h2 class="secTitle spriteImg spriteImg-txt_h2_best">
+          <span class="hide">BEST</span>
+        </h2>
+        <div class="bestStoryWrap">
+          <article class="mainStory">
+            <figure>
+              <img class="img" :style="{backgroundImage: 'url(' + postList[0].storyImg + ')'}" alt="">
+              <figcaption> 
+                <p class="title">
+                  {{ postList[0].title }} 
+                </p>
+              </figcaption>
+            </figure>
+          </article>
+
+          <article class="subStory">
+            <figure 
+              v-for="(item, i) in postList.slice(1, 5)"
+              :key="i"
+            >
+              <img class="img" :style="{backgroundImage: 'url(' + item.storyImg + ')'}" alt="">
+              <figcaption> 
+                <p class="title">
+                  {{ item.title }} 
+                </p>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="rankNewSection">
+        <article class="ranking">
+          <h2 class="secTitle spriteImg spriteImg-txt_h2_ranking">
+            <span class="hide">RANKING</span>
+          </h2>
+          <ul class="rankList">
+            <li
+              v-for="(item, i) in rankSortingList.slice(0, 5)"
+              :key="i"
+              class="rankListItem"
+            >
+              <a href="" class="listTitle">{{ item.title }}</a>
+              <div class="pointWrap">
+                <span class="starPoint"></span>
+                <span 
+                  class="starPoint2"
+                  :style="{width: item.starPoint*20 + '%'}"
+                ></span>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <article class="new">
+          <h2 class="secTitle spriteImg spriteImg-txt_h2_new">
+            <span class="hide">NEW</span>
+          </h2>
+        </article>
+      </section>
     </div>
   </div>
 </template>
@@ -109,6 +169,7 @@
     props: {
       tabMenu: Array,
       postList: Array,
+      rankSortingList: Array,
     }
   }
 </script>
@@ -308,6 +369,127 @@
 
   #hotStory{
     padding: 17px;
+  }
+
+  #hotStory .bestStoryWrap{
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #hotStory .bestStoryWrap article{
+    width: calc(50% - 0.5px);
+  }
+
+  #hotStory .bestStoryWrap .subStory{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+  }
+
+  #hotStory .bestStoryWrap figure{
+    position: relative;
+  }
+
+  #hotStory .bestStoryWrap .subStory figure{
+    width: calc(50% - 2px);
+  }
+
+  #hotStory .bestStoryWrap .img{
+    width: 100%;
+    height: 0;
+    padding-top: 73.12775330%;
+    background-size: cover;
+  }
+
+  #hotStory .bestStoryWrap figure figcaption{
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+  }
+
+  #hotStory .bestStoryWrap .mainStory figcaption{
+    padding: 29px;
+  }
+
+  #hotStory .bestStoryWrap .subStory figcaption{
+    padding: 13px 15px;
+  }
+
+  #hotStory .bestStoryWrap figcaption .title{
+    display: -webkit-box;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  #hotStory .bestStoryWrap .mainStory figcaption .title{
+    padding-right: 100px;
+    font-size: 20px;
+  }
+
+  #hotStory .bestStoryWrap .subStory figcaption .title{
+    padding-right: 26px;
+    font-size: 12px;
+  }
+
+  #hotStory #rankNewSection{
+    margin-top: 60px;
+    display: flex;
+    gap: 1px;
+  }
+
+  #hotStory #rankNewSection article{
+    width: calc(50% - 0.5px);
+  }
+
+  #hotStory #rankNewSection .pointWrap{
+    width: 80px;
+    position: relative;
+  }
+
+  #hotStory #rankNewSection .ranking .rankList{
+    margin-top: 11px;
+  }
+
+  #hotStory #rankNewSection .ranking .rankList .rankListItem{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+  }
+  #hotStory #rankNewSection .ranking .rankList .rankListItem .listTitle{
+    width: calc(100% - 90px);
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .starPoint{
+    width: 100%;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../assets/img_starRating1.png);
+  }
+  .starPoint2 {
+    height: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../assets/img_starRating2.png);
   }
 
 </style>

@@ -123,6 +123,12 @@
           <h2 class="secTitle spriteImg spriteImg-txt_h2_new">
             <span class="hide">NEW</span>
           </h2>
+          <div class="contentsWrap">
+            <h3>#국내여행 블로그</h3>
+            <div class="slide"></div>
+
+            <h3>#100만방문자</h3>
+          </div>
         </article>
       </section>
     </div>
@@ -456,7 +462,7 @@
   }
 
   #hotStory #rankNewSection .pointWrap{
-    width: 80px;
+    width: 82px;
     position: relative;
   }
 
@@ -489,14 +495,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../assets/img_starRating1.png);
+    background: url(../assets/img_starRating1.png) left center / contain no-repeat;
   }
   .starPoint2 {
     height: 13px;
     position: absolute;
     top: 0;
     left: 0;
-    background: url(../assets/img_starRating2.png);
+    background: url(../assets/img_starRating2.png) left center / cover no-repeat;
   }
 
 </style>

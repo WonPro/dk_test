@@ -25,10 +25,10 @@
         v-for="(post, i) in postList"
         :key="i"
       >
-        <div
-          class="thumbnail spriteImg" 
-          :class="post.image"
-        ></div>
+        <img
+          class="thumbnail" 
+          :src="post.image"
+        >
         <div class="cardCont">
           <div class="wrapper">
             <!-- 블로그 제목, new, hot아이콘 생성 -->
@@ -130,6 +130,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'ContentsWrap',
     data() {
@@ -264,6 +265,12 @@
   
   #hotBlog .card:first-of-type{
     margin-top: 0;
+  }
+
+  #hotBlog .card .thumbnail{
+    width: 240px;
+    height: 176px;
+    display: block;
   }
 
   #hotBlog .card .cardCont{

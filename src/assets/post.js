@@ -7,7 +7,7 @@ export default[
     link: 'https://dktechin.com/service/introduce/company',
     source: "blog201Q",
     writer: "키미",
-    image: "img_thumbnail02.png",
+    image: "./img_thumbnail02.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -33,7 +33,7 @@ export default[
     link: 'https://dktechin.com/service/introduce/welfare',
     source: "blog201Q",
     writer: "키미",
-    image: "spriteImg-img_thumbnail03",
+    image: "./img_thumbnail03.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -75,7 +75,7 @@ export default[
     link: 'https://dktechin.com/service/introduce/client',
     source: "blog201Q",
     writer: "키미",
-    image: "spriteImg-img_thumbnail04",
+    image: "./img_thumbnail04.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -101,7 +101,7 @@ export default[
     link: 'https://dktechin.com/service/introduce/waytocome',
     source: "blog201Q",
     writer: "키미",
-    image: "spriteImg-img_thumbnail02",
+    image: "./img_thumbnail02.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -127,7 +127,7 @@ export default[
     link: 'https://dktechin.com/service/smart/city',
     source: "한국콘텐츠진흥원 상상발전소",
     writer: "초이",
-    image: "spriteImg-img_thumbnail05",
+    image: "./img_thumbnail05.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -157,7 +157,7 @@ export default[
     link: 'https://dktechin.com/service/smart/construction',
     source: "한국콘텐츠진흥원 상상발전소",
     writer: "초이",
-    image: "spriteImg-img_thumbnail02",
+    image: "./img_thumbnail02.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -183,7 +183,7 @@ export default[
     link: 'https://dktechin.com/service/smart/factory',
     source: "한국콘텐츠진흥원 상상발전소",
     writer: "초이",
-    image: "spriteImg-img_thumbnail04",
+    image: "./img_thumbnail04.png",
     tags: [
       {
         tagNm: "#국내여행블로그",
@@ -209,7 +209,7 @@ export default[
     link: 'https://dktechin.com/service/smart/chatbot',
     source: "한국콘텐츠진흥원 상상발전소",
     writer: "초이",
-    image: "spriteImg-img_thumbnail01",
+    image: "./img_thumbnail01.png",
     tags: [
       {
         tagNm: "#국내여행블로그",

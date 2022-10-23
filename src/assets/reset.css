@@ -66,3 +66,10 @@ table {
   height:1px;
   overflow:hidden;
 }
+
+@media screen and (max-width: 640px){
+	.innerWrap{
+		width: 100%;
+		padding: 0;
+	}
+}

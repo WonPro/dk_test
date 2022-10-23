@@ -124,30 +124,44 @@
             <span class="hide">NEW</span>
           </h2>
           <div class="contentsWrap">
-            <h3>#국내여행 블로그</h3>
-            <div>
-              <div id="mainslider">
-                <splide :options="options">
-                  <splide-slide v-for="(item, i) in postList" :key="i">
-                    <div style="height: 45px;" :style="{backgroundImage: 'url('+ item.slideThumbnail +')'}">{{i}}</div>
-                  </splide-slide>
-              </splide>
+            <div id="slider1">
+              <h3 class="contTitle">#국내여행 블로그</h3>
+              <Splide :options="options1">
+                <SplideSlide v-for="(item, i) in postList" :key="i">
+                  <div class="img" style="height: 48px;" :style="{background: 'url('+ item.slideThumbnail +') center center / cover no-repeat'}"></div>
+                </SplideSlide>
+              </Splide>
             </div>
-            </div>
-            <h3>#100만방문자</h3>
-            <div>
-              
+            <div id="slider2">
+              <h3 class="contTitle">#100만방문자</h3>
+              <Splide :options="options2">
+                <SplideSlide v-for="(item, i) in postList" :key="i">
+                  <span class="img" style="width: 66px; height: 48px;" :style="{background: 'url('+ item.slideThumbnail +') center center / cover no-repeat'}"></span>
+                  <span class="title">{{item.title}}</span>
+                </SplideSlide>
+              </Splide>
             </div>
           </div>
         </article>
       </section>
+      <section id="adBanner">
+        <div id="slider3">
+          <Splide :options="options3">
+            <SplideSlide v-for="(item, i) in 3" :key="i">
+              <div style="height: 0; padding-top: 43.2432432%; background: url(./img_slide.png) center center / contain no-repeat; display: block;"></div>
+            </SplideSlide>
+          </Splide>
+        </div>
+      </section>
     </div>
+
   </div>
 </template>
 
 <script>
 import { Splide, SplideSlide } from '@splidejs/vue-splide';
-import '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import '@splidejs/vue-splide/css';
+
 
   export default {
     name: 'ContentsWrap',
@@ -157,15 +171,29 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
         hotViews: 1000, // Hot 아이콘 획득 조회수 기준
         nowDate: '', // 오늘 년월일
         recentDate: '', // 7일 전 년월일
-        options: {
-          type : 'loop',
-          rewind: true,
+        options1: {
+          type   : 'slide',
           perPage: 5,
           perMove: 1,
           gap: 10,
-          pauseOnHover: false,
           arrows: true,
-          hasTrack: false,
+          drag: false,
+          pagination: false,
+        },
+        options2: {
+          type   : 'slide',
+          perPage: 2,
+          perMove: 1,
+          gap: 10,
+          arrows: true,
+          drag: false,
+          pagination: false,
+        },
+        options3: {
+          type   : 'loop',
+          padding: '150px',
+          gap: 20,
+          focus: 'center',
         },
       }
     },
@@ -275,12 +303,27 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
     display: none;
     padding: 14px 18px 18px 18px;
     background-color: #fbfbfb;
-    border: 1px solid #a6a8ab;
+    border: 1px solid #c6cbce;
     border-top: none;
   }
 
   .viewCont.on{
     display: block;
+  }
+
+  @media screen and (max-width: 640px) {
+    #contentsWrap {
+      padding: 0;
+    }
+
+    .viewCont{
+      padding: 15px 0;
+    }
+
+    .spriteImg-txt_contTitle{
+      margin-top: 42px;
+      margin-left: 30px;
+    }
   }
 
   #hotBlog .card{
@@ -412,6 +455,7 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 
     #hotBlog .card .cardCont{
       width: 100%;
+      padding: 40px 34px 40px 30px;
     }
 
     #hotBlog .card .cardCont .cardTitle{
@@ -428,6 +472,14 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
       position: static;
       display: inline-block;
       margin-left: 5px;
+    }
+
+    #hotBlog .card .cardCont .contInfo{
+      margin-top: 15px;
+    }
+
+    #hotBlog .card .cardCont .tagWrap{
+      margin-top: 20px;
     }
   }
 
@@ -505,11 +557,12 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
   #hotStory #rankNewSection{
     margin-top: 60px;
     display: flex;
+    justify-content: space-between;
     gap: 1px;
   }
 
   #hotStory #rankNewSection article{
-    width: calc(50% - 0.5px);
+    width: calc(50% - 5px);
   }
 
   #hotStory #rankNewSection .pointWrap{
@@ -518,7 +571,7 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
   }
 
   #hotStory #rankNewSection .ranking .rankList{
-    margin-top: 11px;
+    margin-top: 15px;
   }
 
   #hotStory #rankNewSection .ranking .rankList .rankListItem{
@@ -556,22 +609,102 @@ import '@splidejs/splide/dist/css/themes/splide-default.min.css';
     background: url(../assets/img_starRating2.png) left center / cover no-repeat;
   }
 
-  #rankNewSection .new .slideContainer{
-    display: flex;
-    overflow: hidden;
-  }
-  #rankNewSection .new .slideContainer .slide{
-    width: 700%;
-    height: 47px;
-    overflow: hidden;
+  
+  #rankNewSection .new .contentsWrap{
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #fff;
   }
 
-  #rankNewSection .new .slideContainer .card{
-    width: 65px;
-    height: 47px;
-    margin: 0 2px;
-    display: block;
-    float: left;
+  #rankNewSection .new .contentsWrap .contTitle{
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #808080;
   }
+
+  #rankNewSection .new #slider1 .img{
+    height: 48px;
+  }
+  #rankNewSection .new #slider2{
+    margin-top: 17px;
+  }
+
+  #rankNewSection .new #slider2 .img{
+    width: 66px;
+    height: 48px;
+  }
+
+  #rankNewSection .new #slider2 .title{
+    width: calc(100% - 71px);
+    display: -webkit-box;
+    padding-right: 10px;
+    word-break: keep-all;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  #rankNewSection .new #slider2 .splide__slide{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .splide__track{
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .splide__arrow{
+    background-color: transparent;
+  }
+
+  .splide__arrow--prev{
+    left: 0;
+  }
+
+  .splide__arrow--next{
+    right: 0;
+  }
+
+  .splide__arrow svg{
+    fill: #bab8b8;
+  }
+
+  #slider3{
+    margin-top: 80px;
+  }
+
+  #slider3 .splide__track{
+    width: 100%;
+  }
+
+  #slider3 .splide__arrow--prev{
+    left: 8rem;
+  }
+
+  #slider3 .splide__arrow--next{
+    right: 8rem;
+  }
+
+  #slider3 .splide__arrow{
+    width: 3rem;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #slider3 .splide__arrow svg{
+    width: 25px;
+    height: 25px;
+    fill: #bab8b8;
+  }
+
+  
 
 </style>

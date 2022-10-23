@@ -120,4 +120,11 @@ export default {
     cursor: pointer;
   }
 
+  @media screen and (max-width: 640px) {
+    #lnbWrap {
+      position: fixed;
+      left: -240px;
+    }
+  }
+
 </style>

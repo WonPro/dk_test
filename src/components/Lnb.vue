@@ -110,7 +110,7 @@ export default {
     height: 300px;
     position: absolute;
     top: 99px;
-    right: -28px;
+    right: -27px;
     background-color: #ffcc56;
     border: 1px solid #f8bb4f;
     -webkit-border-radius: 0 10px 10px 0;
@@ -121,9 +121,56 @@ export default {
   }
 
   @media screen and (max-width: 640px) {
-    #lnbWrap {
+    #lnbWrap{
+      width: 100vw;
+      height: 100vh;
+      margin-left: 0;
       position: fixed;
-      left: -240px;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    #lnbWrap.active{
+      margin-left: 0;
+      z-index: 9999;
+      opacity: 1;
+    }
+
+    #lnb{
+      width: 75%;
+      height: 100vh;
+      padding-top: 63px;
+      padding-left: 53px;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      transition: left 0.3s;
+    }
+
+    #lnbWrap.active #lnb{
+      left: 0;
+    }
+
+    #lnbToggleBtn{
+      width: 41px;
+      height: 40px;
+      padding: 0;
+      top: 30px;
+      right: calc(25% - 72px);
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    #lnbToggleBtn i{
+      width: 100%;
+      height: 40px;
+      background-position: -202px -111px;
     }
   }
 

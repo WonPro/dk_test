@@ -54,7 +54,7 @@
               v-for="tagList in post.tags"
               :key="tagList"
               class="tag" 
-              :style="{backgroundColor : tagList.tagColor}"
+              :class="tagList.tagClass != null ? tagList.tagClass : ''"
             >
               {{ tagList.tagNm }}
             </span><!-- 태그 아이콘 생성 -->
@@ -107,6 +107,7 @@
               :key="i"
               class="rankListItem"
             >
+              <span class="listIndex">{{i + 1}}</span>
               <a href="" class="listTitle">{{ item.title }}</a>
               <div class="pointWrap">
                 <span class="starPoint"></span>
@@ -147,7 +148,7 @@
       <section id="adBanner">
         <div id="slider3">
           <Splide :options="options3">
-            <SplideSlide v-for="(item, i) in 3" :key="i">
+            <SplideSlide v-for="(item, i) in 5" :key="i">
               <div style="height: 0; padding-top: 43.2432432%; background: url(./img_slide.png) center center / contain no-repeat; display: block;"></div>
             </SplideSlide>
           </Splide>
@@ -191,9 +192,14 @@ import '@splidejs/vue-splide/css';
         },
         options3: {
           type   : 'loop',
-          padding: '150px',
+          rewind: false,
+          perPage: 1.3,
+          perMove: 1,
           gap: 20,
+          clones: 1,
           focus: 'center',
+          drag: false,
+          pagination: false,
         },
       }
     },
@@ -313,7 +319,12 @@ import '@splidejs/vue-splide/css';
 
   @media screen and (max-width: 640px) {
     #contentsWrap {
+      height: calc(100vh - 146px);
       padding: 0;
+    }
+
+    #lnbWrap.active + #contentsWrap {
+      width: 100%;
     }
 
     .viewCont{
@@ -441,6 +452,7 @@ import '@splidejs/vue-splide/css';
 
   #hotBlog .card .cardCont .tag{
     padding: 5px 10px;
+    background-color: #b3b6bb;
     -webkit-border-radius: 2px; -moz-border-radius: 2px;
     border-radius: 2px;
     font-size: 14px;
@@ -448,14 +460,10 @@ import '@splidejs/vue-splide/css';
     color: #fff;
   }
 
-  #hotBlog .card .cardCont .tag{
-    padding: 5px 10px;
-    -webkit-border-radius: 2px; -moz-border-radius: 2px;
-    border-radius: 2px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-  }
+  #hotBlog .card .cardCont .tag.green{background-color: #86bbb2;}
+  #hotBlog .card .cardCont .tag.blue{background-color: #9da3d7;}
+  #hotBlog .card .cardCont .tag.yello{background-color: #ccc76c;}
+  #hotBlog .card .cardCont .tag.red{background-color: #a37a7b;}
 
   @media screen and (max-width: 640px) {
     #hotBlog .card .thumbnail{
@@ -490,6 +498,12 @@ import '@splidejs/vue-splide/css';
     #hotBlog .card .cardCont .tagWrap{
       margin-top: 20px;
     }
+
+    #hotBlog .card .cardCont .tag{padding: 0; background-color: transparent; color: #b3b6bb;}
+    #hotBlog .card .cardCont .tag.green{background-color: transparent; color: #86bbb2;}
+    #hotBlog .card .cardCont .tag.blue{background-color: transparent; color: #9da3d7;}
+    #hotBlog .card .cardCont .tag.yello{background-color: transparent; color: #ccc76c;}
+    #hotBlog .card .cardCont .tag.red{background-color: transparent; color: #a37a7b;}
   }
 
   #hotStory{
@@ -584,7 +598,7 @@ import '@splidejs/vue-splide/css';
   }
 
   #hotStory #rankNewSection .ranking .rankList .rankListItem{
-    padding: 10px;
+    padding: 10px 10px 10px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -592,11 +606,20 @@ import '@splidejs/vue-splide/css';
     background-color: #fff;
     border-bottom: 1px solid #eee;
   }
+
+  #hotStory #rankNewSection .ranking .rankList .rankListItem .listIndex{
+    width: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+  }
+
   #hotStory #rankNewSection .ranking .rankList .rankListItem .listTitle{
-    width: calc(100% - 90px);
+    width: calc(100% - 106px);
     font-size: 14px;
     font-weight: bold;
     color: #000;
+    text-decoration: none;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -712,5 +735,73 @@ import '@splidejs/vue-splide/css';
     width: 25px;
     height: 25px;
     fill: #bab8b8;
+  }
+
+  @media screen and (max-width: 640px) {
+    #hotStory{
+      padding: 30px;
+    }
+
+    #hotStory #bestSection{
+      margin-top: 10px;
+    }
+
+    #hotStory .bestStoryWrap article{
+      width: 100%;
+    }
+
+    #hotStory .bestStoryWrap .subStory{
+      margin-top: 2px;
+    }
+
+    #hotStory .bestStoryWrap .mainStory figcaption{
+      padding: 10px;
+    }
+    
+    #hotStory .bestStoryWrap .mainStory figcaption .title{
+      padding-right: 0;
+      font-size: 16px;
+    }
+
+    #hotStory .bestStoryWrap .subStory figure{
+      width: calc(50% - 1px);
+    }
+
+    #hotStory .bestStoryWrap .subStory figcaption{
+      padding: 6px;
+    }
+
+    #hotStory .bestStoryWrap .subStory figcaption .title{
+      padding-right: 0;
+      font-size: 12px;
+    }
+
+    #hotStory #rankNewSection{
+      gap: 0;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    #hotStory #rankNewSection article{
+      width: 100%;
+    }
+
+    #hotStory #rankNewSection .ranking{
+      order: 2;
+      margin-top: 60px;
+    }
+
+    #hotStory #rankNewSection .new{
+      order: 1;
+    }
+
+    #slider3 .splide__arrow--prev{
+    left: 10%;
+    }
+
+    #slider3 .splide__arrow--next{
+      right: 10%;
+    }
+
   }
 </style>

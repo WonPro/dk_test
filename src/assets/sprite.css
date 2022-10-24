@@ -52,6 +52,12 @@
   background-position: -5px -56px;
 }
 
+.spriteImg-icon_lnbClose {
+  width: 40px;
+  height: 40px;
+  background-position: -202px -111px;
+}
+
 .spriteImg-txt_contTitle {
   width: 171px;
   height: 29px;

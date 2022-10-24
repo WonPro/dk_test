@@ -11,15 +11,15 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -38,31 +38,31 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#상위1%부지러너",
-        tagColor: '#86bbb2'
+        tagClass: 'green',
       },
       {
         tagNm: "#상위1%댓글부자",
-        tagColor: '#9da3d7'
+        tagClass: 'blue',
       },
       {
         tagNm: "#친절한답글러",
-        tagColor: '#ccc76c'
+        tagClass: 'yello',
       },
       {
         tagNm: "#10월이슈포스트",
-        tagColor: '#a37a7b'
+        tagClass: 'red',
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -81,15 +81,15 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -108,15 +108,15 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -135,19 +135,19 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#10월이슈포스트",
-        tagColor: '#a37a7b'
+        tagClass: 'red',
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -166,15 +166,15 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -193,15 +193,15 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
     ],
     storyImg: "./img_thumbnail06.png",
@@ -220,23 +220,23 @@ export default[
     tags: [
       {
         tagNm: "#국내여행블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#100만방문자",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#9년차블로그",
-        tagColor: '#b3b6bb'
+        tagClass: null,
       },
       {
         tagNm: "#상위1%부지러너",
-        tagColor: '#86bbb2'
+        tagClass: 'green',
       },
       {
         tagNm: "#친절한답글러",
-        tagColor: '#ccc76c'
+        tagClass: 'yello',
       },
     ],
     storyImg: "./img_thumbnail06.png",

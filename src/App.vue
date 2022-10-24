@@ -1,5 +1,8 @@
 <template>
-  <HeaderBar />
+  <HeaderBar
+    :lnbActive="lnbActive"
+    @lnbToggle="lnbToggle()"
+  />
   
   <div id="container" class="innerWrap">
     <LocationNavBar

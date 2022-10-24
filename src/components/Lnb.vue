@@ -13,16 +13,16 @@
           <a href="" class="spriteImg spriteImg-txt_h1_tag" title="태그"></a>
           <ul class="lnb2Dep">
             <li class="current">
-              <p href="" class="spriteImg spriteImg-txt_h2_tag01" title="친절한답글러"></p>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag01" title="친절한답글러" @click="tagValue('#친절한답글러')"></p>
             </li>
             <li>
-              <p href="" class="spriteImg spriteImg-txt_h2_tag02" title="해외여행"></p>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag02" title="해외여행" @click="tagValue('#해외여행')"></p>
             </li>
             <li>
-              <p href="" class="spriteImg spriteImg-txt_h2_tag03" title="12월이슈포스트"></p>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag03" title="12월이슈포스트" @click="tagValue('#12월이슈포스트')"></p>
             </li>
             <li>
-              <p href="" class="spriteImg spriteImg-txt_h2_tag04" title="100만구독"></p>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag04" title="100만구독" @click="tagValue('#100만구독')"></p>
             </li>
           </ul>
         </li>
@@ -48,6 +48,12 @@ export default {
     // 클릭한 탭 변경 호출
     linked(tabNumber) {
       this.$emit('tabNumber', tabNumber);
+    },
+
+    // 태그명 전달
+    tagValue(tagNm) {
+      this.$emit('tagNm', tagNm);
+      console.log(tagNm)
     }
   },
   props: {

@@ -9,7 +9,7 @@
         v-for="(tab, index) in tabMenu"
         :key="index"
         :class="{on: currentTab == index}" 
-        @click="chosenTab(index)"
+        @click="linked(index)"
       >
         <i class="spriteImg" :class="tab"></i>
       </button>
@@ -168,7 +168,6 @@ import '@splidejs/vue-splide/css';
     name: 'ContentsWrap',
     data() {
       return {
-        currentTab: 0, // 현재 선택한 탭의 Index
         hotViews: 1000, // Hot 아이콘 획득 조회수 기준
         nowDate: '', // 오늘 년월일
         recentDate: '', // 7일 전 년월일
@@ -212,8 +211,8 @@ import '@splidejs/vue-splide/css';
     },
     methods: {
       // 클릭한 탭을 currentTab으로 저장
-      chosenTab(i) {
-        this.currentTab = i;
+      linked(tabNumber) {
+        this.$emit('tabNumber', tabNumber);
       },
 
       // 날짜 받기 함수
@@ -226,7 +225,9 @@ import '@splidejs/vue-splide/css';
 
         this.nowDate = yy + '-' + mm + '-' + dd;
         this.recentDate = yy + '-' + mm + '-' + d7;
-      }
+      },
+
+      
     },
     components: {
       Splide,
@@ -234,7 +235,9 @@ import '@splidejs/vue-splide/css';
     },
     props: {
       tabMenu: Array,
-      postList: Array,
+      currentTab: Number,
+      postList: Object,
+      cloneData: Array,
       rankSortingList: Array,
     }
   }

@@ -5,28 +5,24 @@
         <li class="current">
           <a href="" class="spriteImg spriteImg-txt_h1_category" title="인기 카테고리"></a>
           <ul class="lnb2Dep">
-            <li class="current">
-              <a href="" class="spriteImg spriteImg-txt_h2_blog" title="인기 블로그"></a>
-            </li>
-            <li>
-              <a href="" class="spriteImg spriteImg-txt_h2_story" title="인기 스토리"></a>
-            </li>
+            <li class="current spriteImg spriteImg-txt_h2_blog" title="인기 블로그" @click="linked(0)"></li>
+            <li class="spriteImg spriteImg-txt_h2_story" title="인기 스토리" @click="linked(1)"></li>
           </ul>
         </li>
         <li>
           <a href="" class="spriteImg spriteImg-txt_h1_tag" title="태그"></a>
           <ul class="lnb2Dep">
             <li class="current">
-              <a href="" class="spriteImg spriteImg-txt_h2_tag01" title="친절한답글러"></a>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag01" title="친절한답글러"></p>
             </li>
             <li>
-              <a href="" class="spriteImg spriteImg-txt_h2_tag02" title="해외여행"></a>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag02" title="해외여행"></p>
             </li>
             <li>
-              <a href="" class="spriteImg spriteImg-txt_h2_tag03" title="12월이슈포스트"></a>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag03" title="12월이슈포스트"></p>
             </li>
             <li>
-              <a href="" class="spriteImg spriteImg-txt_h2_tag04" title="100만구독"></a>
+              <p href="" class="spriteImg spriteImg-txt_h2_tag04" title="100만구독"></p>
             </li>
           </ul>
         </li>
@@ -44,8 +40,14 @@
 export default {
   name: 'LocationNavBar',
   methods: {
+    // 사이드메뉴 토글 호출
     closeLnb() {
       this.$emit('lnbToggle')
+    },
+
+    // 클릭한 탭 변경 호출
+    linked(tabNumber) {
+      this.$emit('tabNumber', tabNumber);
     }
   },
   props: {

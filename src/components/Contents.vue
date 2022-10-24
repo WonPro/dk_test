@@ -448,6 +448,15 @@ import '@splidejs/vue-splide/css';
     color: #fff;
   }
 
+  #hotBlog .card .cardCont .tag{
+    padding: 5px 10px;
+    -webkit-border-radius: 2px; -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+
   @media screen and (max-width: 640px) {
     #hotBlog .card .thumbnail{
       display: none;
@@ -704,7 +713,4 @@ import '@splidejs/vue-splide/css';
     height: 25px;
     fill: #bab8b8;
   }
-
-  
-
 </style>
